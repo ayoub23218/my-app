@@ -5,6 +5,30 @@ export default function Home() {
   return (
     <>
       <section
+        id="home"
+        className="flex h-screen items-center justify-center bg-gradient-to-br from-[#e8f0ff] to-white pt-20"
+      >
+        <div className="max-w-[700px] text-center">
+          <h1 className="mb-4 text-[2.5rem] font-bold">
+            Bonjour, je suis <span className="accent">Ayoub</span>
+          </h1>
+          <h2 className="mb-6 text-[1.2rem] font-semibold text-[#555]">
+            Étudiant en informatique / Développeur
+          </h2>
+          <p className="mb-8 text-[#666]">
+            Bienvenue sur mon site. Vous trouverez ici mes projets, mes
+            compétences et mes informations de contact.
+          </p>
+          <a
+            href="#projects"
+            className="rounded-full bg-[#0056d2] px-6 py-[0.8rem] font-semibold text-white no-underline transition-colors duration-300 hover:bg-[#003e9d]"
+          >
+            Voir mes projets
+          </a>
+        </div>
+      </section>
+
+      <section
         id="projects"
         className="py-16 px-8 max-w-[1100px] mx-auto bg-white"
       >
