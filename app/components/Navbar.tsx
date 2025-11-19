@@ -25,7 +25,7 @@ export default function Navbar() {
 
       <ul className="flex list-none gap-8" id="nav-links">
         <NavLink href="#home">Acceuil</NavLink>
-        <NavLink href="#skills">Compétences</NavLink>
+        <NavLink href="#cv">CV</NavLink>
         <NavLink href="#projects">Projets</NavLink>
         <NavLink href="#contact">contact</NavLink>
       </ul>

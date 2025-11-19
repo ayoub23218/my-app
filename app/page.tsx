@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Card from "./components/Card";
+import Cv from "./components/Cv";
 
 export default function Home() {
   return (
@@ -10,9 +11,9 @@ export default function Home() {
       >
         <div className="max-w-[700px] text-center">
           <h1 className="mb-4 text-[2.5rem] font-bold">
-            Bonjour, je suis <span className="accent">Ayoub</span>
+            Bonjour, je suis <span className="text-[#0056d2]">Ayoub</span>
           </h1>
-          <h2 className="mb-6 text-[1.2rem] font-semibold text-[#555]">
+          <h2 className="mb-6 text-[1.2rem] font-bold text-[#555]">
             Étudiant en informatique / Développeur
           </h2>
           <p className="mb-8 text-[#666]">
@@ -26,6 +27,10 @@ export default function Home() {
             Voir mes projets
           </a>
         </div>
+      </section>
+      <section id="cv" className="cv-py-12 px-6 max-w-[900px] mx-auto">
+        <h2 className="text-center text-[2rem] mb-8">Mon CV</h2>
+        <Cv />
       </section>
 
       <section
