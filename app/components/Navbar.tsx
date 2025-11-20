@@ -58,6 +58,7 @@ export default function Navbar() {
         <NavLink href="#cv">CV</NavLink>
         <NavLink href="#projects">Projets</NavLink>
         <NavLink href="#contact">Contact</NavLink>
+        <NavLink href="/Blog">Blog</NavLink>
       </ul>
     </nav>
   );

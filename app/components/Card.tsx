@@ -37,10 +37,7 @@ export default function Card(props: CardProps) {
         </p>
         <div className="flex flex-wrap gap-2 mb-6">
           {props.skills.map((skill) => (
-            <span
-              key={skill}
-              className="bg-[#e8f0ff] text-[#0056d2] py-1 px-3 rounded-full text-xs font-semibold"
-            >
+            <span className="bg-[#e8f0ff] text-[#0056d2] py-1 px-3 rounded-full text-xs font-semibold">
               {skill}
             </span>
           ))}
