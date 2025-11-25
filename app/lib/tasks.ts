@@ -1,18 +1,30 @@
 'use server'
 
+import { db } from '@/db';
+import { blogTable } from '@/db/schema';
+import { eq } from 'drizzle-orm';
 import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
 
-const tasks: { title: string; description: string; }[] = []
 
 export async function getTasks() {
-  return tasks
+  return await db.select().from(blogTable)
 }
 
 export async function createTask(form: FormData) {
-  tasks.push({
+  await db.insert(blogTable).values({
     title: String(form.get('title')),
-    description: String(form.get('description')),
+    content: String(form.get('content'))
   })
+  redirect((await headers()).get('referer') ?? '/')
+}
+export async function deleteTask(formData: FormData) {
+  const id = formData.get('id');
+  
+  if (id) {
+
+    await db.delete(blogTable).where(eq(blogTable.id, String(id)));
+  }
+  
   redirect((await headers()).get('referer') ?? '/')
 }

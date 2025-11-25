@@ -54,10 +54,10 @@ export default function Navbar() {
         `}
         id="nav-links"
       >
-        <NavLink href="#home">Accueil</NavLink>
-        <NavLink href="#cv">CV</NavLink>
-        <NavLink href="#projects">Projets</NavLink>
-        <NavLink href="#contact">Contact</NavLink>
+        <NavLink href="/#home">Accueil</NavLink>
+        <NavLink href="/#cv">CV</NavLink>
+        <NavLink href="/#projects">Projets</NavLink>
+        <NavLink href="/#contact">Contact</NavLink>
         <NavLink href="/Blog">Blog</NavLink>
       </ul>
     </nav>
