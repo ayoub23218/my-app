@@ -18,13 +18,17 @@ export async function createTask(form: FormData) {
   })
   redirect((await headers()).get('referer') ?? '/')
 }
-export async function deleteTask(formData: FormData) {
-  const id = formData.get('id');
-  
-  if (id) {
-
-    await db.delete(blogTable).where(eq(blogTable.id, String(id)));
-  }
-  
+export async function deleteTask(id: string) {
+  await db.delete(blogTable).where(eq(blogTable.id, id))
+  redirect((await headers()).get('referer') ?? '/')
+}
+export async function editTask(form: FormData) {
+  await db
+    .update(blogTable)
+    .set({
+      title: String(form.get('title')),
+      done: form.get('done') === 'on',
+    })
+    .where(eq(blogTable.id, String(form.get('id'))))
   redirect((await headers()).get('referer') ?? '/')
 }
