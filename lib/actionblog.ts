@@ -7,22 +7,22 @@ import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 
-export async function getTasks() {
+export async function getBlogs() {
   return await db.select().from(blogTable)
 }
 
-export async function createTask(form: FormData) {
+export async function createBlog(form: FormData) {
   await db.insert(blogTable).values({
     title: String(form.get('title')),
     content: String(form.get('content'))
   })
   redirect((await headers()).get('referer') ?? '/')
 }
-export async function deleteTask(id: string) {
+export async function deleteBlog(id: string) {
   await db.delete(blogTable).where(eq(blogTable.id, id))
   redirect((await headers()).get('referer') ?? '/')
 }
-export async function editTask(form: FormData) {
+export async function editBlog(form: FormData) {
   await db
     .update(blogTable)
     .set({

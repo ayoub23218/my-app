@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Card from "./components/Card";
-import Cv from "./components/Cv";
+import Card from "../components/Card";
+import Cv from "../components/Cv";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
         className="flex h-screen items-center justify-center bg-gradient-to-br from-[#e8f0ff] to-white pt-20"
       >
         <div className="max-w-[700px] text-center">
-          <h1 className="mb-4 text-[2.5rem] font-bold">
+          <h1 className="mb-4 text-[2.5rem] font-bold dark:text-black">
             Bonjour, je suis <span className="text-[#0056d2]">Ayoub</span>
           </h1>
           <h2 className="mb-6 text-[1.2rem] font-bold text-[#555]">
@@ -28,8 +28,8 @@ export default function Home() {
           </a>
         </div>
       </section>
-      <section id="cv" className="cv-py-12 px-6 max-w-[900px] mx-auto">
-        <h2 className="text-center text-[2rem] mb-8">Mon CV</h2>
+      <section id="cv" className="cv-py-12 px-6 max-w-[900px] mx-auto bg-white">
+        <h2 className="text-center text-[2rem] mb-8 dark:text-black">Mon CV</h2>
         <Cv />
       </section>
 

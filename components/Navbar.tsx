@@ -1,4 +1,4 @@
-"use client"; //OBLIGATOIRE pour utiliser le clic et le state
+"use client"; //obligatoire pour utiliser le clic et le state
 
 import Link from "next/link";
 import { useState, type ReactNode } from "react"; //Importer useState

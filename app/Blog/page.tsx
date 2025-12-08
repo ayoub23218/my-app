@@ -1,12 +1,12 @@
-import { createTask, getTasks, deleteTask } from "../lib/tasks";
+import { createBlog, getBlogs, deleteBlog } from "../../lib/actionblog";
 export const dynamic = "force-dynamic";
 
 export default async function Blog() {
-  const tasks = await getTasks();
+  const tasks = await getBlogs();
   return (
     <>
       <h2 className="text-center text-[2rem] mt-15">Mon CV</h2>
-      <form action={createTask}>
+      <form action={createBlog}>
         <label className="block">
           title: <input className="border" name="title" />
         </label>
@@ -17,7 +17,7 @@ export default async function Blog() {
       </form>
       <div className="grid grid-cols-1 gap-6 min-[700px]:grid-cols-2">
         {tasks.map((task) => {
-          const deleteWithId = deleteTask.bind(null, task.id);
+          const deleteWithId = deleteBlog.bind(null, task.id);
           return (
             <div
               key={task.id}

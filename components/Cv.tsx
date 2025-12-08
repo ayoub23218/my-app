@@ -5,7 +5,9 @@ type CvEntryProps = {
 function CvEntry(props: CvEntryProps) {
   return (
     <div className="bg-white p-6 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] min-[700px]:odd:last:col-span-2">
-      <h3 className="mb-[0.6rem] text-xl font-semibold">{props.title}</h3>
+      <h3 className="mb-[0.6rem] text-xl font-semibold dark:text-black">
+        {props.title}
+      </h3>
       <p className="text-[0.95rem] text-[#444] leading-normal">
         {props.description}
       </p>

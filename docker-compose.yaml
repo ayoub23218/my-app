@@ -50,5 +50,6 @@ services:
       - "3000:3000"
     environment:
       DATABASE_URL: postgres://root:hello@db:5432/mydb
+      SECRET: afzelmkfja
     volumes:
       - /app/node_modules

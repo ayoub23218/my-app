@@ -28,7 +28,7 @@ export default function Card(props: CardProps) {
       <img
         src={props.img}
         alt="Aperçu de mon projet 1"
-        className="w-full h-[200px] object-cover"
+        className="w-full h-[200px] object-cover dark:text-black"
       />
       <div className="p-6 flex flex-col flex-1">
         <h3 className="text-xl font-bold text-[#333] mb-3">{props.title}</h3>
