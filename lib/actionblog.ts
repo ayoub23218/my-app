@@ -34,3 +34,4 @@ export async function editBlog(form: FormData) {
   redirect((await headers()).get('referer') ?? '/')
 }
 
+//docker compose exec app npx drizzle-kit push

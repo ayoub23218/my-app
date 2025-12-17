@@ -7,10 +7,8 @@ import {
   editBlog,
 } from "../../lib/actionblog";
 
-export const dynamic = "force-dynamic";
-
 export default async function Blog() {
-  const tasks = await getBlogs();
+  const Blogs = await getBlogs();
 
   return (
     <section className="max-w-5xl mx-auto px-4 py-12">
@@ -21,10 +19,10 @@ export default async function Blog() {
       <BlogForm createAction={createBlog} />
 
       <div className="grid grid-cols-1 gap-6 min-[700px]:grid-cols-2">
-        {tasks.map((task) => (
+        {Blogs.map((Blog) => (
           <BlogCard
-            key={task.id}
-            task={task}
+            key={Blog.id}
+            task={Blog}
             editAction={editBlog}
             deleteAction={deleteBlog}
           />
