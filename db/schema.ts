@@ -6,3 +6,9 @@ export const blogTable = pgTable('blog', {
   content: text().notNull(),
   done: boolean().default(false).notNull(),
 })
+
+export const usersTable = pgTable('users', {
+  id: uuid().defaultRandom().primaryKey(),
+  login: text().notNull().unique(),
+  password: text().notNull(),
+})
