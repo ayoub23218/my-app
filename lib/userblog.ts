@@ -13,6 +13,11 @@ export async function register(form: FormData) {
     login, // short for login: login
     password: await hash(password, 10),
   })
+  const signature = await hash(secret + login, 10)
+  const cookieStore = await cookies()
+  cookieStore.set('session', `${login};${signature}`)
+
+  redirect((await headers()).get('referer') ?? '/')
 }
 
 export async function login(form: FormData) {
@@ -41,8 +46,9 @@ export async function getCurrentUser() {
   if (!session) return null
 
   // Check the signature
-  const [login, signature] = session.split(';')
-  const correct = await compare(signature, secret + login)
+  const [login, signature] = session.value.split(';')
+  if (!login || !signature) return null
+  const correct = await compare(secret + login, signature)
 
   return correct ? login : null
 }
